@@ -1,0 +1,9 @@
+coverage
+flow-typed
+dist
+doc
+node_modules
+*.log
+*.log.json
+.nyc_output
+.eslintcache

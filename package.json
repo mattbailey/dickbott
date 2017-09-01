@@ -1,0 +1,56 @@
+{
+  "name": "omgbot",
+  "version": "1.0.0",
+  "main": "lib/index.js",
+  "author": "Matt Bailey <m@mdb.io>",
+  "license": "MIT",
+  "scripts": {
+    "develop": "nodemon -w lib -x forever lib/index.js"
+  },
+  "eslintConfig": {
+    "env": {
+      "node": true
+    },
+    "plugins": [
+      "prettier"
+    ],
+    "parserOptions": {
+      "ecmaVersion": 8,
+      "ecmaFeatures": {
+        "experimentalObjectRestSpread": true
+      }
+    },
+    "rules": {
+      "prettier/prettier": [
+        "error",
+        {
+          "singleQuote": true,
+          "trailingComma": "all",
+          "printWidth": 100,
+          "semi": false
+        }
+      ]
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "yarn test:eslint && prettier --write --no-semi --print-width=100 --single-quote --trailing-comma=all",
+      "git add"
+    ],
+    "*.jsx": [
+      "yarn test:eslint && prettier --write --no-semi --print-width=100 --single-quote --trailing-comma=all",
+      "git add"
+    ]
+  },
+  "devDependencies": {
+    "eslint": "^4.5.0",
+    "forever": "^0.15.3",
+    "eslint-plugin-prettier": "^2.2.0",
+    "lint-staged": "^4.0.4",
+    "nodemon": "^1.11.0",
+    "prettier": "^1.6.1"
+  },
+  "dependencies": {
+    "slackbots": "^1.0.2"
+  }
+}
