@@ -7,6 +7,7 @@
   "repository": "https://github.com/mattbailey/dickbott.git",
   "scripts": {
     "prestart": "git log -1 --oneline --no-color > BOT_RELEASE",
+    "test:eslint": "eslint lib",
     "start": "node lib/index.js",
     "precommit": "lint-staged",
     "develop": "nodemon -w lib -x forever lib/index.js"
@@ -35,9 +36,14 @@
       ]
     }
   },
+  "prettier": {
+    "semi": false,
+    "trailingComma": "all",
+    "singleQuote": true
+  },
   "lint-staged": {
     "*.js": [
-      "yarn test:eslint && prettier --write --no-semi --print-width=100 --single-quote --trailing-comma=all",
+      "yarn test:eslint && prettier --write",
       "git add"
     ]
   },
@@ -45,6 +51,7 @@
     "eslint": "^4.5.0",
     "eslint-plugin-prettier": "^2.2.0",
     "forever": "^0.15.3",
+    "husky": "^0.14.3",
     "lint-staged": "^4.0.4",
     "nodemon": "^1.11.0",
     "prettier": "^1.6.1"
