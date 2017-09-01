@@ -8,6 +8,7 @@ Restart=always
 EnvironmentFile=/run/metadata/dickbott
 
 ExecStartPre=-/usr/bin/docker rm -f %p
+ExecStartPre=-/usr/bin/bash -c 'docker images -f "dangling=true" -q | xargs docker rmi 2> /dev/null'
 ExecStartPre=-/usr/bin/docker pull mattbailey/dickbott:latest
 ExecStart=/usr/bin/docker run --rm \
   --name %p \
