@@ -14,7 +14,7 @@
   },
   "scripts": {
     "precommit": "lint-staged",
-    "semantic-release": "semantic-release pre && semantic-release post",
+    "release": "semantic-release pre && semantic-release post",
     "develop": "nodemon -w lib -x forever lib/index.js"
   },
   "release": {
