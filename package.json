@@ -51,6 +51,7 @@
     "prettier": "^1.6.1"
   },
   "dependencies": {
+    "figlet": "alavers/figlet.js#c79da1bd0fed9c410d289b989876433714cbf076",
     "slackbots": "^1.0.2"
   }
 }
