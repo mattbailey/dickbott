@@ -1,11 +1,27 @@
 {
   "name": "omgbot",
-  "version": "1.0.0",
+  "version": "0.0.0-semantic-release",
   "main": "lib/index.js",
   "author": "Matt Bailey <m@mdb.io>",
   "license": "MIT",
+  "repository": "https://github.com/mattbailey/dickbott.git",
+  "config": {
+    "validate-commit-message": {
+      "types": "conventional-commit-types",
+      "autoFix": true,
+      "helpMessage": "Please conform to conventional commit types: https://github.com/adjohnson916/conventional-commit-types/blob/master/index.json"
+    }
+  },
   "scripts": {
+    "precommit": "lint-staged",
+    "semantic-release": "semantic-release pre && semantic-release post",
     "develop": "nodemon -w lib -x forever lib/index.js"
+  },
+  "release": {
+    "verifyConditions": {
+      "path": "./.verify.js",
+      "additional": "config"
+    }
   },
   "eslintConfig": {
     "env": {
@@ -44,13 +60,15 @@
   },
   "devDependencies": {
     "eslint": "^4.5.0",
-    "forever": "^0.15.3",
     "eslint-plugin-prettier": "^2.2.0",
+    "forever": "^0.15.3",
     "lint-staged": "^4.0.4",
     "nodemon": "^1.11.0",
-    "prettier": "^1.6.1"
+    "prettier": "^1.6.1",
+    "validate-commit-msg": "^2.14.0"
   },
   "dependencies": {
+    "semantic-release": "^7.0.2",
     "slackbots": "^1.0.2"
   }
 }
