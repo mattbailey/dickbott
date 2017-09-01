@@ -1,0 +1,18 @@
+[Unit]
+Description=dickbott
+Requires=docker.service
+After=docker.service
+
+[Service]
+Restart=always
+EnvironmentFile=/run/metadata/dickbott
+
+ExecStartPre=-/usr/bin/docker rm -f %p
+ExecStartPre=-/usr/bin/docker pull mattbailey/dickbott:latest
+ExecStart=/usr/bin/docker run --rm \
+  --name %p \
+  -e BOT_TOKEN=${BOT_TOKEN} \
+  -e BOT_NAME=${BOT_NAME} \
+    mattbailey/dickbott:latest
+
+ExecStop=/usr/bin/docker rm -f %p

@@ -6,6 +6,7 @@
   "license": "MIT",
   "repository": "https://github.com/mattbailey/dickbott.git",
   "scripts": {
+    "prestart": "git log -1 --oneline --no-color > BOT_RELEASE",
     "precommit": "lint-staged",
     "develop": "nodemon -w lib -x forever lib/index.js"
   },
