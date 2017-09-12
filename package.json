@@ -43,7 +43,8 @@
   },
   "lint-staged": {
     "*.js": [
-      "yarn test:eslint && prettier --write",
+      "eslint lib",
+      "prettier --write",
       "git add"
     ]
   },
