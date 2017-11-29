@@ -12,6 +12,7 @@ ExecStartPre=-/usr/bin/bash -c 'docker images -f "dangling=true" -q | xargs dock
 ExecStartPre=-/usr/bin/docker pull mattbailey/dickbott:latest
 ExecStart=/usr/bin/docker run --rm \
   --name %p \
+  -v /home/core/services/wordlist.sql:/usr/src/app/lib/handlers/message/data/wordlist.sql \
   -e BOT_TOKEN=${BOT_TOKEN} \
   -e BOT_NAME=${BOT_NAME} \
     mattbailey/dickbott:latest
