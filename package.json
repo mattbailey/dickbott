@@ -49,18 +49,17 @@
     ]
   },
   "devDependencies": {
-    "eslint": "^4.5.0",
-    "eslint-plugin-prettier": "^2.2.0",
+    "eslint": "^4.19.1",
+    "eslint-plugin-prettier": "^2.7.0",
     "forever": "^0.15.3",
     "husky": "^0.14.3",
-    "lint-staged": "^4.0.4",
-    "nodemon": "^1.11.0",
-    "prettier": "^1.6.1"
+    "lint-staged": "^4.3.0",
+    "nodemon": "^1.18.9",
+    "prettier": "^1.16.4"
   },
   "dependencies": {
-    "figlet": "alavers/figlet.js#c79da1bd0fed9c410d289b989876433714cbf076",
-    "slackbots": "^1.0.2",
-    "sqlite": "^2.8.0",
-    "sqlite3": "^3.1.13"
+    "figlet": "github:alavers/figlet.js#c79da1bd0fed9c410d289b989876433714cbf076",
+    "slackbots": "^1.2.0",
+    "sqlite3": "^4.0.6"
   }
 }

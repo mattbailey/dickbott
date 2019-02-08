@@ -7,3 +7,4 @@ node_modules
 *.log.json
 .nyc_output
 .eslintcache
+BOT_RELEASE
